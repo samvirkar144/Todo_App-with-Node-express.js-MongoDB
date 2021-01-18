@@ -5,6 +5,7 @@ const path = require("path");
 const todo = require("./model/todo.js");
 const db = require('./config/database');
 const todos = require('./routes/todos');
+const items = require('./routes/items')
 const mongoose = require("mongoose");
 // connect to mongoose
 mongoose.connect(db.mongoURI,{ useNewUrlParser: true ,useUnifiedTopology: true}).then(() => {
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 
 
 app.use('/', todos);
+app.use('/',items)
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
