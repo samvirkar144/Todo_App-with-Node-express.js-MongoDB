@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
-const { string } = require('yargs');
 var Schema = mongoose.Schema;
 
 itemSchema = new Schema( {
 	unique_id: Number,
 	name: String,
-	price: String
+	price: String,
+	quantity:Number
 }),
 Item = mongoose.model('items', itemSchema);
 
